@@ -1,0 +1,28 @@
+def quiz_game():
+    questions = [
+        {"question": "What is the capital of France?", "options": ["Paris", "London", "Berlin"], "answer": "Paris"},
+        {"question": "What is the largest planet in our solar system?", "options": ["Earth", "Jupiter", "Mars"], "answer": "Jupiter"},
+        {"question": "What is the powerhouse of the cell?", "options": ["Nucleus", "Mitochondria", "Ribosome"], "answer": "Mitochondria"}
+    ]
+
+    score = 0
+
+    for q in questions:
+        print(q["question"])
+        for idx, opt in enumerate(q["options"]):
+            print(f"{idx + 1}. {opt}")
+
+        user_input = int(input("Enter your answer (1, 2, 3): "))
+        user_answer = q["options"][user_input - 1]
+
+        if user_answer == q["answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is: {q['answer']}")
+
+        print()
+
+    print(f"Quiz complete! You got {score}/{len(questions)} questions correct.")
+
+quiz_game()
